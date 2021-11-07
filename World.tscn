@@ -1,0 +1,226 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://ramhead.jpg" type="Texture" id=2]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/dark/scenes/prototype_dark_05.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/light/scenes/prototype_light_03.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/light/scenes/prototype_light_01.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/light/scenes/prototype_light_04.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/scenes/prototype_orange_09.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/green/scenes/prototype_green_10.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/kenney_prototypes/assets/cube/cube.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/red/scenes/prototype_red_10.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/purple/scenes/prototype_purple_08.tscn" type="PackedScene" id=11]
+[ext_resource path="res://jumper.gd" type="Script" id=12]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/green/scenes/prototype_green_12.tscn" type="PackedScene" id=13]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/green/scenes/prototype_green_13.tscn" type="PackedScene" id=14]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/red/textures/texture_01.png" type="Texture" id=15]
+[ext_resource path="res://addons/sounds/dungeon002.ogg" type="AudioStream" id=16]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/dark/scenes/prototype_dark_01.tscn" type="PackedScene" id=17]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 4, 0.5, 4 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -2, 0.25, 2, 2, 0.25, 2, -2, -0.25, 2, 2, 0.25, 2, 2, -0.25, 2, -2, -0.25, 2, 2, 0.25, -2, -2, 0.25, -2, 2, -0.25, -2, -2, 0.25, -2, -2, -0.25, -2, 2, -0.25, -2, 2, 0.25, 2, 2, 0.25, -2, 2, -0.25, 2, 2, 0.25, -2, 2, -0.25, -2, 2, -0.25, 2, -2, 0.25, -2, -2, 0.25, 2, -2, -0.25, -2, -2, 0.25, 2, -2, -0.25, 2, -2, -0.25, -2, 2, 0.25, 2, -2, 0.25, 2, 2, 0.25, -2, -2, 0.25, 2, -2, 0.25, -2, 2, 0.25, -2, -2, -0.25, 2, 2, -0.25, 2, -2, -0.25, -2, 2, -0.25, 2, 2, -0.25, -2, -2, -0.25, -2 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.533333, 0.619608, 0.690196, 1 )
+albedo_texture = ExtResource( 15 )
+uv1_scale = Vector3( 8, 10, 10 )
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="BoxShape" id=7]
+
+[sub_resource type="CubeMesh" id=8]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="WorldLevel1" type="Node" parent="."]
+
+[node name="Cube2" parent="WorldLevel1" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 9 )
+
+[node name="PrototypeCube3" parent="WorldLevel1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 5 )
+
+[node name="SpawnPoint" type="Spatial" parent="WorldLevel1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4.1282, 57.6339 )
+
+[node name="MeshInstance" type="MeshInstance" parent="WorldLevel1/SpawnPoint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WorldLevel1/SpawnPoint/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WorldLevel1/SpawnPoint/MeshInstance/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Platform" type="MeshInstance" parent="WorldLevel1"]
+transform = Transform( 70, 0, 0, 0, 1, 0, 0, 0, 80, 0, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="WorldLevel1/Platform"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WorldLevel1/Platform/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="WorldLevel1/Platform"]
+stream = ExtResource( 16 )
+unit_db = 35.0
+autoplay = true
+
+[node name="PrototypeCube" parent="WorldLevel1" instance=ExtResource( 3 )]
+transform = Transform( 4.08, 0, 0, 0, 10.66, 0, 0, 0, 5.1, 0, 1, -17 )
+
+[node name="PrototypeCube2" parent="WorldLevel1" instance=ExtResource( 4 )]
+transform = Transform( 1.2, 0, 0, 0, 1.12, 0, 0, 0, 1, 20, 8, 2 )
+
+[node name="PrototypeCube4" parent="WorldLevel1" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 17.55, 0, 0, 0, 2, 16, 1, 4 )
+
+[node name="PrototypeCube5" parent="WorldLevel1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 4, 9 )
+
+[node name="PrototypeCube6" parent="WorldLevel1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 7, -18, 1, 51 )
+
+[node name="PrototypeCube32" parent="WorldLevel1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 7, -6, 1, 51 )
+
+[node name="PrototypeCube33" parent="WorldLevel1" instance=ExtResource( 7 )]
+transform = Transform( 7, 0, 0, 0, 4, 0, 0, 0, 1, -18, 1, 65 )
+
+[node name="PrototypeCube7" parent="WorldLevel1" instance=ExtResource( 8 )]
+transform = Transform( 7.7, 0, 0, 0, 0.244077, 0, 0, 0, 4.32, -6, 1, -33 )
+
+[node name="PrototypeCube8" parent="WorldLevel1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 0.924, 0, 0, 0, 9.8, 3, 20, -7 )
+
+[node name="PrototypeCube11" parent="WorldLevel1" instance=ExtResource( 13 )]
+transform = Transform( 5, 0, 0, 0, 4, 0, 0, 0, 1, -40, 1, 27 )
+
+[node name="PrototypeCube35" parent="WorldLevel1" instance=ExtResource( 13 )]
+transform = Transform( 8.5, 0, 0, 0, 4, 0, 0, 0, 1, -47, 1, 35 )
+
+[node name="PrototypeCube36" parent="WorldLevel1" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 7, -47, 1, 21 )
+
+[node name="PrototypeCube37" parent="WorldLevel1" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 7, -40, 1, 13 )
+
+[node name="PrototypeCube38" parent="WorldLevel1" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 10, -47, 1, 1 )
+
+[node name="PrototypeCube12" parent="WorldLevel1" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 6, -6, 1, 1 )
+
+[node name="PrototypeCube39" parent="WorldLevel1" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 2.5, -18, 1, 8 )
+
+[node name="PrototypeCube41" parent="WorldLevel1" instance=ExtResource( 14 )]
+transform = Transform( 8, 0, 0, 0, 4, 0, 0, 0, 1, -34, 1, 8 )
+
+[node name="PrototypeCube40" parent="WorldLevel1" instance=ExtResource( 14 )]
+transform = Transform( 17.1, 0, 0, 0, 4, 0, 0, 0, 1, -38, 1, -1 )
+
+[node name="PrototypeCube9" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 8, -17.8, 1, 13 )
+
+[node name="PrototypeCube13" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 1, -29.8, 1, 27 )
+
+[node name="PrototypeCube14" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 1, -29.8, 1, 35 )
+
+[node name="PrototypeCube" parent="WorldLevel1/PrototypeCube14" instance=ExtResource( 17 )]
+transform = Transform( 0.28, 0, 0, 0, 0.4, 0, 0, 0, 1, 10.8, 0, -11 )
+
+[node name="PrototypeCube15" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 8, -17.8, 1, 35 )
+
+[node name="PrototypeCube16" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 8, -15.8, 7, 13 )
+
+[node name="PrototypeCube17" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 8, -15.8, 7, 35 )
+
+[node name="PrototypeCube34" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 8, -15.8, 7, 49 )
+
+[node name="PrototypeCube18" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 3, -17.8, 7, 29 )
+
+[node name="PrototypeCube22" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 3, -3.8, 7, 29 )
+
+[node name="PrototypeCube25" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 5, 8.2, 9, 27 )
+
+[node name="PrototypeCube28" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 25, 0, 0, 0, 1, 0, 0, 0, 15, 8.2, 19, 17 )
+
+[node name="PrototypeCube31" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 17, 58.2, 1, 15 )
+
+[node name="PrototypeCube29" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 25, 0, 0, 0, 10, 0, 0, 0, 1, 8.2, 1, 47 )
+
+[node name="PrototypeCube30" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 25, 0, 0, 0, 10, 0, 0, 0, 1, 8.2, 1, 15 )
+
+[node name="PrototypeCube26" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 9, 0, 0, 0, 5, 8.2, 1, 37 )
+
+[node name="PrototypeCube27" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 9, 0, 0, 0, 5, 8.2, 1, 17 )
+
+[node name="PrototypeCube23" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 7, 0, 0, 0, 4, 0, 0, 0, 1, -3.8, 1, 35 )
+
+[node name="PrototypeCube24" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 7, 0, 0, 0, 4, 0, 0, 0, 1, -3.8, 1, 27 )
+
+[node name="PrototypeCube19" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 3, -29.8, 7, 29 )
+
+[node name="PrototypeCube20" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 8, -5.8, 1, 13 )
+
+[node name="PrototypeCube21" parent="WorldLevel1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 8, -5.8, 1, 35 )
+
+[node name="OmniLight" type="OmniLight" parent="WorldLevel1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, 28 )
+
+[node name="OmniLight2" type="OmniLight" parent="WorldLevel1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 14, 22 )
+light_energy = 3.471
+light_indirect_energy = 2.294
+
+[node name="Area" type="Area" parent="WorldLevel1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.6748, 1.92376, -15.6745 )
+collision_mask = 2
+script = ExtResource( 12 )
+
+[node name="CollisionShape" type="CollisionShape" parent="WorldLevel1/Area"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="WorldLevel1/Area"]
+mesh = SubResource( 8 )
+material/0 = null
+
+[connection signal="body_entered" from="WorldLevel1/Area" to="WorldLevel1/Area" method="_on_Area_body_entered"]
