@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ProgressBarTheme.tres" type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.980392, 0, 0, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="ProgressBar" type="ProgressBar"]
+margin_right = 414.0
+margin_bottom = 50.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0.894118, 0.945098, 0.0431373, 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 40.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/fonts/New_Rocker_25.tres" type="DynamicFont" id=1]
+[ext_resource path="res://addons/images/greengradient.-verydark.png" type="Texture" id=2]
+[ext_resource path="res://addons/images/greengradient-light.png" type="Texture" id=3]
+[ext_resource path="res://addons/images/greengradient-medium.png" type="Texture" id=4]
+[ext_resource path="res://addons/fonts/NewRocker-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://addons/images/bluegradient-cropped.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 1
+outline_color = Color( 0.372549, 0.364706, 0.423529, 1 )
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+outline_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="LoginScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -262.5
+margin_top = -200.0
+margin_right = 262.5
+margin_bottom = 200.0
+rect_min_size = Vector2( 525, 400 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 60.0
+margin_right = -35.0
+margin_bottom = -45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_right = 455.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 2 )
+text = "Login Screen"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 54.0
+margin_right = 455.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Usernametitle" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_top = 78.0
+margin_right = 455.0
+margin_bottom = 110.0
+custom_fonts/font = ExtResource( 1 )
+text = "User Name"
+
+[node name="Username" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+margin_top = 114.0
+margin_right = 455.0
+margin_bottom = 138.0
+
+[node name="PasswordTitle" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_top = 142.0
+margin_right = 455.0
+margin_bottom = 174.0
+custom_fonts/font = ExtResource( 1 )
+text = "Password"
+
+[node name="Password" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+margin_top = 178.0
+margin_right = 455.0
+margin_bottom = 202.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 206.0
+margin_right = 455.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="LoginButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+margin_left = 117.0
+margin_top = 220.0
+margin_right = 337.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 220, 55 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/LoginButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Login"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateAccountButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+margin_left = 117.0
+margin_top = 279.0
+margin_right = 337.0
+margin_bottom = 334.0
+rect_min_size = Vector2( 220, 55 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/CreateAccountButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Create Account"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

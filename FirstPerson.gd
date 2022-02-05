@@ -1,5 +1,9 @@
 extends KinematicBody
 
+var damage = 10
+const MAX_CAM_SHAKE = 0.3
+
+
 var speed = 10
 var acceleration = 6
 var air_acceleration = 1
@@ -19,6 +23,11 @@ var bouncing = false
 
 onready var head = $Head
 onready var ground_check = $GroundCheck
+onready var anim_player = $AnimationPlayer
+onready var camera = $Head/Camera
+onready var raycast = $Head/Camera/RayCast
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,8 +46,29 @@ func _input(event):  # only move if mouse is captured
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			get_tree().set_input_as_handled()	# don't fire weapon
 
+func fire():
+	if Input.is_action_pressed("fire"):
+		if not anim_player.is_playing():
+			
+			camera.translation = lerp(camera.translation, 
+			Vector3(rand_range(MAX_CAM_SHAKE, -MAX_CAM_SHAKE), 
+			rand_range(MAX_CAM_SHAKE, -MAX_CAM_SHAKE), 0), 0.5)
+			
+			if raycast.is_colliding():
+				var target = raycast.get_collider()
+				if target.is_in_group("Enemy"):
+					print("hit enemy")
+					target.hit = true
+				#	target.health. -= damage
+					
+					
+		anim_player.play("AssaultFire")
+	else:
+		camera.translation = Vector3()
+
 func _process(delta):
 	
+	fire()
 	direction = Vector3()
 	
 	if ground_check.is_colliding():

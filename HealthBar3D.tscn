@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ProgressBar.tscn" type="PackedScene" id=1]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[node name="HealthBar3D" type="Spatial"]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 414, 50 )
+
+[node name="ProgressBar" parent="Viewport" instance=ExtResource( 1 )]
+value = 100.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+flip_v = true
+billboard = 1
+texture = SubResource( 1 )
