@@ -24,9 +24,6 @@ font_data = ExtResource( 5 )
 [node name="LoginScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_left = 0.5
@@ -50,9 +47,6 @@ margin_left = 35.0
 margin_top = 60.0
 margin_right = -35.0
 margin_bottom = -45.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title" type="Label" parent="NinePatchRect/VBoxContainer"]
 margin_right = 455.0
@@ -117,9 +111,6 @@ custom_fonts/font = SubResource( 3 )
 text = "Login"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CreateAccountButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
 margin_left = 117.0

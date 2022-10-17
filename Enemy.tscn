@@ -3,7 +3,7 @@
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HealthBar3D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/images/malcolm_head.jpg" type="Texture" id=4]
+[ext_resource path="res://addons/images/frownyface.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 3.0
@@ -15,8 +15,10 @@ mid_height = 3.0
 albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="CylinderMesh" id=4]
+height = 2.383
 
 [sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
 albedo_texture = ExtResource( 4 )
 uv1_scale = Vector3( 3, 2, 1 )
 
@@ -38,6 +40,6 @@ material/0 = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.48469, 0 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( -0.292982, 0, 0.979104, 0, 1, 0, -0.979104, 0, -0.292982, 0, 0.662704, 0 )
+transform = Transform( -0.292409, 0, 0.977188, 0, 1, 0, -0.977188, 0, -0.292409, 0, 0.662704, 0 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
